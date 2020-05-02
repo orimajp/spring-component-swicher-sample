@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>invalid Axe</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link  th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Helmes Answer</h1>
+    <div class="communication-area">
+        <div class="alert alert-danger" role="alert">
+            It's not an ax.
+        </div>
+    </div>
+    <a th:href="@{/}" class="btn btn-primary btn-block">Retry</a>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

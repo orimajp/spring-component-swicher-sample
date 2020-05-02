@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link  th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Did you drop a gold ax?</h1>
+    <div class="communication-area">
+        <a th:href="@{/select/gold}" class="btn btn-primary btn-block" >Yes! The golden ax is mine.</a>
+        <a th:href="@{/select/iron}" class="btn btn-primary btn-block" >No! My ax is an iron ax.</a>
+        <a th:href="@{/select/silver}" class="btn btn-primary btn-block" >No! My ax is an silver ax.</a>
+        <a th:href="@{/select/copper}" class="btn btn-primary btn-block" >No! My ax is an copper ax.</a>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
