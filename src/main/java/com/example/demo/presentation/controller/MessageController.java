@@ -1,6 +1,6 @@
 package com.example.demo.presentation.controller;
 
-import com.example.demo.application.MessageService;
+import com.example.demo.application.service.MessageService;
 import com.example.demo.domain.axe.InvalidAxeTypeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

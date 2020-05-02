@@ -1,4 +1,4 @@
-package com.example.demo.application;
+package com.example.demo.application.service;
 
 import com.example.demo.domain.axe.Axe;
 import com.example.demo.domain.axe.AxeHolder;
