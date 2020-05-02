@@ -2,6 +2,7 @@ package com.example.demo.domain.axe;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.util.Assert;
 
 import java.util.Arrays;
 
@@ -17,11 +18,16 @@ public enum Axe {
 
     String material;
 
-    public static Axe getAxe(String axeType) {
+    public static Axe getAxe(String material) {
+        Assert.hasText(material, "null or empty character cannot be specified");
         return Arrays.stream(values())
-                .filter(axe1 -> axe1.getMaterial().equals(axeType))
+                .filter(axe -> axe.sameMaterial(material))
                 .findFirst()
                 .orElseThrow(InvalidAxeTypeException::new);
+    }
+
+    private boolean sameMaterial(String material) {
+        return this.material.equals(material);
     }
 
 }
