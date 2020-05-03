@@ -20,17 +20,7 @@ public abstract class SwitchableFactory<T, E extends Switchable<T>> {
             throw new RuntimeException("No components");
         }
 
-        final List<E> defaultComponents = getDefaultComponents();
-
-        if (defaultComponents.isEmpty()) {
-            throw new RuntimeException("No default implements");
-        }
-
-        if (defaultComponents.size() > 1) {
-            throw new RuntimeException("Multiple default implements");
-        }
-
-        defaultComponent = defaultComponents.get(0);
+        defaultComponent = getDefaultComponent();
     }
 
     public E getComponent() {
@@ -75,10 +65,20 @@ public abstract class SwitchableFactory<T, E extends Switchable<T>> {
         }
     }
 
-    private List<E> getDefaultComponents() {
-        return componentMap.values().stream()
+    private E getDefaultComponent() {
+        final List<E> defaultComponents = componentMap.values().stream()
                 .filter(Switchable::isDefault)
                 .collect(Collectors.toList());
+
+        if (defaultComponents.isEmpty()) {
+            throw new RuntimeException("No default implements");
+        }
+
+        if (defaultComponents.size() > 1) {
+            throw new RuntimeException("Multiple default implements");
+        }
+
+        return defaultComponents.get(0);
     }
 
 }
