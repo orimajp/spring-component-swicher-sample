@@ -6,6 +6,6 @@ public interface Switchable<T> {
         return false;
     }
 
-    T getKey();
+    T getComponentKey();
 
 }

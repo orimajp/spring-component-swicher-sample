@@ -68,7 +68,7 @@ public abstract class SwitchableFactory<T, E extends Switchable<T>> {
     }
 
     private void registerComponentMap(@NonNull E switchable) {
-        final E result = componentMap.putIfAbsent(switchable.getKey(), switchable);
+        final E result = componentMap.putIfAbsent(switchable.getComponentKey(), switchable);
 
         if (result != null) {
             throw new RuntimeException("Duplicate key found.");

@@ -13,7 +13,7 @@ public class DefaultAxMessageService implements AxMessageService {
     }
 
     @Override
-    public Axe getKey() {
+    public Axe getComponentKey() {
         return Axe.OtherAx;
     }
 
