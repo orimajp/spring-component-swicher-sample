@@ -20,9 +20,7 @@ public abstract class SwitchableFactory<T, E extends Switchable<T>> {
             throw new RuntimeException("No components");
         }
 
-        final List<E> defaultComponents = componentMap.values().stream()
-                .filter(Switchable::isDefault)
-                .collect(Collectors.toList());
+        final List<E> defaultComponents = getDefaultComponents();
 
         if (defaultComponents.isEmpty()) {
             throw new RuntimeException("No default implements");
@@ -75,6 +73,12 @@ public abstract class SwitchableFactory<T, E extends Switchable<T>> {
         if (result != null) {
             throw new RuntimeException("Duplicate key found.");
         }
+    }
+
+    private List<E> getDefaultComponents() {
+        return componentMap.values().stream()
+                .filter(Switchable::isDefault)
+                .collect(Collectors.toList());
     }
 
 }
