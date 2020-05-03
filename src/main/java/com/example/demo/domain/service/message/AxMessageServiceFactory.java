@@ -1,7 +1,7 @@
-package com.example.demo.domain.message;
+package com.example.demo.domain.service.message;
 
-import com.example.demo.domain.axe.Axe;
-import com.example.demo.domain.axe.AxeHolder;
+import com.example.demo.domain.model.axe.Axe;
+import com.example.demo.domain.model.axe.AxeHolder;
 import com.example.demo.domain.shared.switchable.SwitchableFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class AxMessageProviderFactory extends SwitchableFactory<Axe, AxMessageProvider> {
+public class AxMessageServiceFactory extends SwitchableFactory<Axe, AxMessageService> {
 
-    private final List<AxMessageProvider> axMessageProviders;
+    private final List<AxMessageService> axMessageServices;
 
     @PostConstruct
     public void init() {
-        register(axMessageProviders);
+        register(axMessageServices);
     }
 
     @Override

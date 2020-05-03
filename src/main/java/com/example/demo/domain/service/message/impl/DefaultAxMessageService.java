@@ -1,11 +1,11 @@
-package com.example.demo.domain.message.impl;
+package com.example.demo.domain.service.message.impl;
 
-import com.example.demo.domain.axe.Axe;
-import com.example.demo.domain.message.AxMessageProvider;
+import com.example.demo.domain.model.axe.Axe;
+import com.example.demo.domain.service.message.AxMessageService;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DefaultAxMessageProvider implements AxMessageProvider {
+public class DefaultAxMessageService implements AxMessageService {
 
     @Override
     public String getMessage() {

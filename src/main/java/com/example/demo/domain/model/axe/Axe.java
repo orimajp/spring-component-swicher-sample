@@ -1,4 +1,4 @@
-package com.example.demo.domain.axe;
+package com.example.demo.domain.model.axe;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

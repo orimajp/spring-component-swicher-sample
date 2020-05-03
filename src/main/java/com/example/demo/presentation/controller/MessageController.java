@@ -1,7 +1,7 @@
 package com.example.demo.presentation.controller;
 
-import com.example.demo.application.service.MessageService;
-import com.example.demo.domain.axe.InvalidAxeTypeException;
+import com.example.demo.application.service.MessageApplicationService;
+import com.example.demo.domain.model.axe.InvalidAxeTypeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequiredArgsConstructor
 public class MessageController {
 
-    private final MessageService messageService;
+    private final MessageApplicationService messageApplicationService;
 
     @GetMapping
     public String init() {
@@ -26,8 +26,8 @@ public class MessageController {
 
     @GetMapping("select/{axe}")
     public String select(Model model, @PathVariable("axe") String axe) {
-        messageService.setAxe(axe);
-        final String message = messageService.getMessage();
+        messageApplicationService.setAxe(axe);
+        final String message = messageApplicationService.getMessage();
         model.addAttribute("message", message);
         return "answer";
     }
